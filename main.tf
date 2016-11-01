@@ -60,7 +60,7 @@ resource "aws_instance" "web" {
   instance_type          = "t2.micro"
   subnet_id              = "subnet-3135ea1c"
   vpc_security_group_ids = ["sg-57e40c2a"]
-
+jkjkjk
   tags {
     Identify = "datapipe-rabbit"
     Foo      = "datapipe-rabbit1"
