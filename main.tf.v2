@@ -1,0 +1,56 @@
+#
+
+# DO NOT DELETE THESE LINES!
+
+#
+
+# Your subnet ID is:
+
+#
+
+#     subnet-3135ea1c
+
+#
+
+# Your security group ID is:
+
+#
+
+#     sg-57e40c2a
+
+#
+
+# Your AMI ID is:
+
+#
+
+#     ami-c9580bde
+
+#
+
+# Your Identity is:
+
+#
+
+#     datapipe-rabbit
+
+#
+
+provider "aws" {
+  access_key = "AKIAJCKJAHDTLTHSL6BQ"
+  secret_key = "DtBKi95g2+rYjLw/cdmb27h0C/xF3ZBg0/6bhN+g"
+  region     = "us-east-1"
+}
+
+resource "aws_instance" "web" {
+  ami                    = "ami-c9580bde"
+  instance_type          = "t2.micro"
+  subnet_id              = "subnet-3135ea1c"
+  vpc_security_group_ids = ["sg-57e40c2a"]
+
+  tags {
+    Identify = "datapipe-rabbit"
+    Foo = "datapipe-rabbit1"
+    Foo2 = "datapipe-rabbit2"
+  }
+}

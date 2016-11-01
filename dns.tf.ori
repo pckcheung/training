@@ -1,0 +1,15 @@
+provider "dnsimple" {
+  email = "notaemail"
+  token = "xxxxxxx"
+}
+
+
+
+resource "dnsimple_record"  {
+    domain        = "terraform.rocks"
+    type          = "A"
+    name          = "new-domain"
+    count = "${length(aws_instance.web.*.public_ip)}"
+    value = "${element(aws_instance.web.*.public_ip,count.index)}"
+   }
+
