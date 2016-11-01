@@ -27,13 +27,6 @@
 #     ami-c9580bde
 
 #
-
-# Your Identity is:
-
-#
-
-#     datapipe-rabbit
-
 #
 
 variable "aws_access_key" {}
@@ -42,6 +35,13 @@ variable "aws_secret_key" {}
 
 variable "aws_region" {
   default = "us-east-1"
+
+# Your Identity is:
+
+#
+
+#     datapipe-rabbit
+
 }
 
 provider "aws" {
@@ -55,7 +55,7 @@ provider "aws" {
 
 
 resource "aws_instance" "web" {
-  count                  = "2"
+  count                  = "1"
   ami                    = "ami-c9580bde"
   instance_type          = "t2.micro"
   subnet_id              = "subnet-3135ea1c"
